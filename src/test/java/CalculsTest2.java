@@ -20,18 +20,18 @@ import org.junit.runners.Parameterized;
 @RunWith(Parameterized.class)
 class CalculsTest2 {
 
-	@Test
-	void test() 
-	{
-		fail("Not yet implemented");
-	}
+//	@Test
+//	void test()
+//	{
+//		fail("Not yet implemented");
+//	}
 
     static Stream<Arguments> chargerJeuDeTest() throws Throwable 
     {
         return Stream.of(
             Arguments.of(2,2,4), // appellera : testMultiplier(2,2,4)
             Arguments.of(6,6,36),
-            Arguments.of(3,2,3)
+            Arguments.of(3,2,6)
         );
     }
 
