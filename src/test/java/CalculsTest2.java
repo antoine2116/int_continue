@@ -73,7 +73,9 @@ class CalculsTest2 {
 	{
 		return Stream.of(
 				Arguments.of(2, 2, 1),
-				Arguments.of(12, 6, 2)
+				Arguments.of(12, 6, 2),
+				Arguments.of(12, 0, 69)
+
 		);
 	}
 
@@ -82,8 +84,13 @@ class CalculsTest2 {
 	void testDiviser(int firstNumber, int secondNumber, int expectedResult)
 	{
 		// Partie paramétrée
-		Calculs monCal = new Calculs(firstNumber, secondNumber);
-		assertEquals(expectedResult, monCal.diviser(), "test en échec pour " + firstNumber + " / " + secondNumber + " != " + expectedResult);
+		try {
+			Calculs monCal = new Calculs(firstNumber, secondNumber);
+			assertEquals(expectedResult, monCal.diviser(), "test en échec pour " + firstNumber + " / " + secondNumber + " != " + expectedResult);
+		}
+		catch (ArithmeticException exception) {
+			fail("Impossible de diviser par 0");
+		}
 	}
 	// endregion
 
